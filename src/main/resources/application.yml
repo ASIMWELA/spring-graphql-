@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/graphql
+    hikari:
+      connection-timeout: 20000
+      minimum-idle: 10
+      maximum-pool-size: 50
+      idle-timeout: 10000
+      max-lifetime: 40000
+      auto-commit: true
+    username: root
+    password: auga.
+  main:
+    banner-mode: off
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: create
+    open-in-view:  false
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  sql:
+    init:
+      mode: always
+graphql:
+  playground:
+    mapping: /playground
+    endpoint: /graphql
+  servlet:
+    enabled: true
+    mapping: /graphql
+
